@@ -1,7 +1,7 @@
 name: openai_flutter
 description: A new Flutter package project.
 version: 0.0.1
-homepage:
+homepage: https://github.com/haganWu/openai_flutter
 
 environment:
   sdk: '>=3.0.5 <4.0.0'

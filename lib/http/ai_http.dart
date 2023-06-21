@@ -23,7 +23,11 @@ class AiHttp {
       };
     }
     IOClient myClient = IOClient(httpClient);
-    final http.Response response = await myClient.post(Uri.parse(url), body: body != null ? jsonEncode(body) : null);
+    final http.Response response = await myClient.post(
+      Uri.parse(url),
+      headers: AiConfigBuilder.instance.headers(),
+      body: body != null ? jsonEncode(body) : null,
+    );
     AiLogger.log(message: 'request to $url finished with status code: ${response.statusCode}', tag: 'AiHttp');
     AiLogger.log(message: 'Starting decoding response body', tag: 'AiHttp');
     // 防止乱码

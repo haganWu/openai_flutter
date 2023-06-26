@@ -47,9 +47,9 @@ class AiConfigBuilder {
       headers['OpenAI-Organization'] = _organization!;
     }
     if(_apiKey?.startsWith('Bearer ')??false) {
-      headers['Authorization:'] = _apiKey!;
+      headers['Authorization'] = _apiKey!;
     } else {
-      headers['Authorization:'] = 'Bearer $_apiKey';
+      headers['Authorization'] = 'Bearer $_apiKey';
     }
     return headers;
   }
